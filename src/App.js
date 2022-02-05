@@ -17,7 +17,7 @@ const App=()=>{
   
  
    
-    fetch(`https://api.github.com/users?since=${300}`)
+    fetch(`https://api.github.com/users`)
     .then(res => res.json())
     .then(data => {
         setUserData(data);
@@ -39,7 +39,7 @@ function handleSubmit(e){
 
   return(
     <div className="App">
-      <div className="navbar"><p>Github Search</p></div>
+   <p className="header">Typehead</p>
        <SearchForm userInput={userInput} handleSubmit={handleSubmit} setUserInput={setUserInput}/>
        <Card userInput={userInput} userData = {userData} />
    </div>

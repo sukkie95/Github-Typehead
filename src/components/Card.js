@@ -3,7 +3,7 @@ import React from "react";
 
 const Card = ({userData, userInput}) => {
     return ( 
-   <div>
+   <div className="main">
      {userData.filter((val)=>{
       if(userInput==='' ){
         return ''
@@ -13,17 +13,17 @@ const Card = ({userData, userInput}) => {
     
 
     }).map((val, key)=>(
+      <a href={val.html_url} target="blank">
     <div className="card" key='key'>
-     <div className="result">
-      <div className="image"><img src={val.avatar_url} /></div> 
-       <div className="username"><p>{val.login}</p></div>
-       <div className="profile-link"><p><a href={val.html_url} target='blank'>Profile</a></p></div>
-   
+    
+      <div className="image">
+        <div><img src={val.avatar_url} /></div>
+        <div><p>{val.login}</p></div> </div>
       
-</div>
-  
-</div>
 
+  
+    </div>
+    </a>
     ))}
        
          
