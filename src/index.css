@@ -1,0 +1,201 @@
+* {
+ padding: 0;
+  margin-top: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 2vw;
+
+ 
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    font-size: 1vw;
+}
+
+.App{
+  margin: 0;
+
+}
+
+ .navbar{
+  
+ color: white;
+ border: 1px solid white;
+ width: 60%;
+ margin: 0 auto;
+ box-shadow: 2px 4px white;
+ margin-bottom: 30px;
+ background-color: teal;
+
+
+}
+
+.navbar p{
+  font-size: 3vw;
+  margin: auto;
+  text-align: center;
+}
+
+.search{
+  width: 60%;
+  margin: 0 auto;
+ 
+
+}
+
+
+.search form{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+form input{
+  height:5vw;
+  width: 100%;
+  border: 1px solid teal;
+  
+
+}
+
+form button{
+  width: 15%;
+  color: teal;
+  background-color: white;
+  border: 1px solid teal;
+  align-self: flex-end;
+}
+
+form input:hover{
+  cursor: pointer;
+}
+
+form button:hover{
+  cursor: pointer;
+  background-color: teal;
+  color: white;
+  border: 1px solid white;
+}
+
+.card{
+  width: 60%;
+  margin: 0 auto;
+  
+}
+.result{
+  width: 100%;
+  display: flex;
+  margin: auto;
+  color: teal;
+}
+
+.result a{
+  text-decoration: none;
+  color:teal;
+}
+.image{
+  width: 50%;
+  margin: auto;
+}
+
+.image img{
+  width:8vw
+}
+
+.username{
+  width: 30%;
+  margin: auto;
+}
+
+.result:hover{
+  border-bottom: 1px solid teal;
+  box-shadow: 0px 2px 2px 0px teal;
+  
+}
+
+.profile-link{
+  width: 20%;
+  text-align: center;
+  margin: auto;
+  background-color: teal;
+
+}
+
+.profile-link a{
+  color: white;
+  margin: auto;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  
+    .card{
+      width: 90%;
+      
+      
+    }
+    .search{
+      width: 90%;
+      margin: 0 auto;
+      
+    
+    }
+
+    .navbar{
+      width: 90%;
+    }
+    .navbar p{
+      font-size: 4vw;
+    }
+}
+
+ /* Media Query for Tablets Ipads portrait mode */
+ @media (min-width: 768px) and (max-width: 1024px){
+  .card{
+    width: 70%;
+    
+    
+  }
+  .search{
+    width: 70%;
+    margin: 0 auto;
+    
+  
+  }
+
+  .navbar{
+    width: 70%;
+  }
+  .navbar p{
+    font-size: 3.3vw;
+  }
+}
+
+  /* Media Query for low resolution  Tablets, Ipads */
+  @media (min-width: 481px) and (max-width: 767px) {
+    .card{
+      width: 80%;
+      
+      
+    }
+    .search{
+      width: 80%;
+      margin: 0 auto;
+      
+    
+    }
+  
+    .navbar{
+      width: 80%;
+    }
+    .navbar p{
+      font-size: 3.6vw;
+    }
+}
