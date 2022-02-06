@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchForm = ({userInput, handleSubmit, setUserInput}) => {
+const SearchForm = ({userInput,  setUserInput}) => {
     return ( 
         <div className="search">
       
@@ -10,8 +10,7 @@ const SearchForm = ({userInput, handleSubmit, setUserInput}) => {
           value={userInput}
           onChange={(e)=> setUserInput(e.target.value)}
          />
-        <button onSubmit={handleSubmit}>GO</button>
-     
+         
      </div>
      );
 }
