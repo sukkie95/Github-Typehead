@@ -17,7 +17,8 @@ body {
 }
 .App{
   background-image: linear-gradient(to right top, #19d4a1, #75daa1, #a3e0a9, #c6e6b8, #e0eccd, #dce9cf, #d9e5d1, #d7e1d3, #bbd1c3, #9dc1b7, #7fb1b0, #63a0ab);
-
+  margin: 0;
+  box-sizing:border-box;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -26,7 +27,8 @@ code {
 }
 
 .App{
-  height: 100vh;
+  min-height: 100vw;
+  width: 100vw;
  
 }
 
@@ -72,7 +74,7 @@ img{
 
 input{
   padding: 15px 20px;
-  width: 85%;
+  width: 100%;
   font-weight: bold;
   border: none;
 
@@ -80,19 +82,7 @@ input{
 
 }
 
-.search button{
-  background-color: rgb(119, 167, 119);
-  color: white;
-  border: none;
-  padding: 15px 20px;
-  border-radius: 10px;
 
-}
-
-.search button:hover{
-  background-color: rgb(102, 153, 102);
-  cursor: pointer;
-}
 
 .image{
   width: 100%;
@@ -140,7 +130,30 @@ a{
   }
 
   .header{
-    font-size: 6vw;
+    font-size: 10vw;
   }
 }
 
+
+.Results{
+  
+  display: none;
+}
+
+.NoResults{
+  text-align: center;
+  color: white;
+}
+
+
+@media(min-width: 1800px){
+  .header{
+    min-width: 900px;
+  }
+  .search{
+    min-width: 900px;
+  }
+  .card{
+    min-width: 900px;
+  }
+}
