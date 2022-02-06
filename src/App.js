@@ -1,49 +1,46 @@
-import React, {useState, useEffect} from "react";
-import ReactDOM  from "react";
-import  Card from "./components/Card";
+import React, { useState, useEffect } from "react";
+import Card from "./components/Card";
 import SearchForm from "./components/SearchForm";
 
-import './index.css';
+import "./index.css";
 
-const App=()=>{
+const App = () => {
+  const [userData, setUserData] = useState(null);
+  const [userInput, setUserInput] = useState("");
 
- const[userData, setUserData] = useState([]);
- const[userInput, setUserInput] = useState('');
+//Fetch data From github Api, it takes usernames their profile link, Timer is for controlling Api request speed
 
- 
+  useEffect(() => {
+    const ModifiedUserInput = userInput.trim().toLowerCase();
+    if (ModifiedUserInput === ""){ return;}
+const timer = setTimeout(() => {
 
- 
-  useEffect(()=>{
-  
- 
+
+    fetch(
+      `https://api.github.com/search/users?q=${ModifiedUserInput}&in:login&per_page=20`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setUserData(data);
+      });
+    }, 2000);
    
-    fetch(`https://api.github.com/users`)
-    .then(res => res.json())
-    .then(data => {
-        setUserData(data);
-        
-    }); 
+    return () => clearTimeout(timer);
+
   }, [userInput]);
+  console.log(userData);
 
-function handleSubmit(e){
-  e.preventDefault();
 
-  fetch(`https://api.github.com/users`)
-    .then(res => res.json())
-    .then(data => {
-        setUserData(data);
-        
-    },[userInput]); 
-}
- 
-
-  return(
+  return (
     <div className="App">
-   <p className="header">Typehead</p>
-       <SearchForm userInput={userInput} handleSubmit={handleSubmit} setUserInput={setUserInput}/>
-       <Card userInput={userInput} userData = {userData} />
-   </div>
+      <p className="header">Typehead</p>
+      <SearchForm
+        userInput={userInput}
+        setUserInput={setUserInput}
+      />
+      <Card userInput={userInput} userData={userData} />
+    </div>
   );
-}
+};
 
 export default App;
